@@ -1,31 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
 
+/* Variables CSS */
+:root {
+    --wine: #722F37;
+    --burgundy: #8B1538;
+    --gold: #D4AF37;
+    --cream: #FDF5E6;
+    --white: #ffffff;
+    
+    --nav-padding: 10px 5%;
+    --logo-size: 120px;
+    --nav-font: 1.2rem;
+    --carousel-height: 70vh;
+    --caption-title: 2.5rem;
+    --caption-text: 1.2rem;
+    --footer-padding: 40px 5%;
+    --social-size: 2rem;
+}
+
 body {
     font-family: "Source Sans Pro", sans-serif;
-    font-weight: 400;
     margin: 0;
     padding: 0;
-    background-color: #FDF5E6; 
-    color: #722F37;
+    background-color: var(--cream);
+    color: var(--wine);
     line-height: 1.6;
 }
 
+.merriweather-font {
+    font-family: "Merriweather", serif !important;
+}
+
+/* Navigation */
 .main-nav {
-    background-color: #722F37;
+    background-color: var(--wine);
     display: flex;
     align-items: center;
-    padding: 10px 5%;
+    padding: var(--nav-padding);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-    color: #ffffff;
-    position: relative; 
+    color: var(--white);
+    position: relative;
     min-height: 90px;
     justify-content: space-between;
 }
 
 .logo {
-    height: 120px;
-    width: 120px;
-    border-radius: 80px;
+    height: var(--logo-size);
+    width: var(--logo-size);
+    border-radius: 50%;
 }
 
 .main-nav .nav-links {
@@ -36,20 +58,86 @@ body {
 }
 
 .main-nav a {
-    color: #ffffff;
+    color: var(--white);
     font-family: "Merriweather", serif;
     padding: 8px 15px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: color 0.3s;
     text-decoration: underline;
     margin: 0 10px;
-    font-weight: 600; 
-    font-size: 1.2rem;
+    font-weight: 600;
+    font-size: var(--nav-font);
 }
 
 .main-nav a:hover {
-    color: #D4AF37; 
+    color: var(--gold);
 }
 
+.menu-button {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    border: 2px solid var(--gold);
+    transform: translateY(-50%);
+    background-color: var(--wine);
+    color: var(--white);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+}
+
+.menu-button:hover {
+    background-color: var(--burgundy);
+    color: var(--white);
+}
+
+/* Carousel */
+.carousel-img {
+    height: var(--carousel-height);
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 5px;
+    bottom: 15%;
+}
+
+.carousel-caption h5 {
+    font-size: var(--caption-title);
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.carousel-caption p {
+    font-size: var(--caption-text);
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.custom-carousel-btn {
+    background-color: var(--wine) !important;
+    border-color: var(--wine) !important;
+    color: var(--white) !important;
+    font-weight: 600;
+    margin-top: 20px;
+    display: inline-block !important;
+    padding: 12px 24px !important;
+    font-size: 1.1rem !important;
+    border-radius: 5px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+}
+
+.custom-carousel-btn:hover {
+    background-color: var(--burgundy) !important;
+    border-color: var(--burgundy) !important;
+}
+
+/* Hero Section */
 .hero-section {
     padding: 60px 20px;
     text-align: center;
@@ -62,7 +150,7 @@ body {
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    border: 2px solid #D4AF37;
+    border: 2px solid var(--gold);
 }
 
 .hero-section p {
@@ -71,38 +159,15 @@ body {
     margin-bottom: 20px;
     color: #333;
     text-align: justify;
-    font-family: "Source Sans Pro", sans-serif;
-    font-weight: 400;
 }
 
-.menu-button {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    border: 2px solid #D4AF37;
-    transform: translateY(-50%);
-    background-color: #722F37;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: background-color 0.3s;
-}
-
-.menu-button:hover {
-    background-color: #8B1538;
-    color: white;
-}
+/* Footer */
 .main-footer {
-
-    background-color: #722F37; 
-    color: #ffffff; 
-    padding: 40px 5%; 
-    text-align: center; 
+    background-color: var(--wine);
+    color: var(--white);
+    padding: var(--footer-padding);
+    text-align: center;
 }
-
 
 .main-footer .container {
     max-width: 1000px;
@@ -110,66 +175,19 @@ body {
 }
 
 .main-footer a {
-    color: #ffffff; 
+    color: var(--white);
     text-decoration: none;
     transition: color 0.3s;
-    font-family: "Source Sans Pro", sans-serif;
-    font-weight: 400;
-    display: block; 
+    display: block;
     margin-bottom: 8px;
 }
 
 .main-footer a:hover {
-   
-    color: #D4AF37; 
-    text-decoration: none; 
-}
-
-/* Carrusel de imagenes */
-.carousel-img {
-    height: 70vh;
-    object-fit: cover;
-}
-
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.4); 
-    padding: 20px;
-    border-radius: 5px;
-    bottom: 15%; 
-}
-
-.carousel-caption h5 {
-    font-size: 2.5rem;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
-}
-
-.carousel-caption p {
-    font-size: 1.2rem;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
-}
-
-.custom-carousel-btn {
-    background-color: var(--color-terracota);
-    border-color: var(--color-terracota);
-    color: #ffffff;
-    font-weight: 600;
-    margin-top: 20px;
-}
-
-.custom-carousel-btn:hover {
-    background-color: #A34438;
-    border-color: #A34438;
-}
-/* Botón de reserva en footer */
-.reservation-button {
-    margin: 25px 0 20px;
-    text-align: center;
+    color: var(--gold);
 }
 
 .btn-reservation {
-    background: linear-gradient(45deg, #d4af37, #f4d03f);
+    background: linear-gradient(45deg, var(--gold), #f4d03f);
     color: #1a1a1a !important;
     padding: 15px 30px;
     border-radius: 50px;
@@ -179,16 +197,15 @@ body {
     display: inline-block;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-    border: 2px solid #d4af37;
+    border: 2px solid var(--gold);
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin: 25px 0 20px;
 }
 
 .btn-reservation:hover {
-    background: linear-gradient(45deg, #f4d03f, #d4af37);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-    color: #1a1a1a !important;
 }
 
 .btn-reservation i {
@@ -199,102 +216,81 @@ body {
 .social-links {
     margin: 20px 0 15px;
     padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2); 
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .social-links a {
-    font-size: 2rem; 
+    font-size: var(--social-size);
     margin: 0 12px;
-    display: inline-block; 
-}
-
-.social-links a:hover {
-    color: #D4AF37; 
+    display: inline-block;
 }
 
 .main-footer small {
     display: block;
     margin-top: 15px;
     opacity: 0.8;
-    font-family: "Source Sans Pro", sans-serif;
     font-size: 0.9rem;
     font-weight: 300;
 }
-/* ======================== */
-/* Estilos para la sección de contacto */
-/* ======================== */
-#contact.contact-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-} /* Ajusta el padding según sea necesario */
 
-.contact-card {
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
-} /* Ajusta el max-width según sea necesario */
-
-.contact-card h2 {
-    margin-bottom: 1.5rem;
-    color: #722F37;
-} /* Título de la tarjeta */
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-} /* Formulario de contacto */
-
-.contact-form label {
-    text-align: left;
-    display: block;
-    font-weight: 600;
-    color: #722F37;
-} /* Etiquetas de los campos */
-
-.contact-input,
-.contact-textarea {
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 100%;
-    font-family: inherit;
-    font-size: 1rem;
-} /* Estilos para los campos de entrada */
-
-.contact-textarea {
-    resize: none;
-} /* Evita que el textarea sea redimensionable */
-
-.contact-input:focus,
-.contact-textarea:focus {
-    outline: none;
-    border-color: #ffffff;
-    box-shadow: 0 0 0 4px rgba(114,47,55,0.08);
-} /* Estilos al enfocar los campos */
-
-.contact-button {
-    padding: 0.75rem;
-    background-color: #722F37;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s, transform 0.15s;
-} /* Estilos para el botón de envío */
-
-.contact-button:hover,
-.contact-button:focus {
-    background-color: #8B1538;
-    transform: translateY(-1px);
-} /* Efecto hover y focus para el botón */
-
-@media (max-width: 480px) {
-    #contact.contact-section {
-        padding: 1rem;
+/* Media Queries */
+@media (min-width: 1400px) {
+    :root {
+        --nav-padding: 15px 8%;
+        --logo-size: 140px;
+        --nav-font: 1.4rem;
+        --carousel-height: 75vh;
+        --caption-title: 3rem;
+        --caption-text: 1.4rem;
+        --footer-padding: 50px 8%;
+        --social-size: 2.2rem;
     }
-} /* Ajustes para pantallas pequeñas */
+    
+    .main-nav { min-height: 100px; }
+    .main-nav .nav-links { gap: 30px; margin-right: 300px; }
+    .menu-button { right: 30px; }
+    .hero-section { padding: 80px 40px; }
+    .hero-section .container { padding: 50px; max-width: 1200px; }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --nav-padding: 8px 2%;
+        --logo-size: 80px;
+        --nav-font: 1rem;
+        --carousel-height: 50vh;
+        --caption-title: 1.7rem;
+        --caption-text: 1rem;
+        --footer-padding: 30px 3%;
+        --social-size: 1.8rem;
+    }
+    
+    .main-nav .nav-links { gap: 10px; margin-right: 120px; margin-left: 15px; }
+    .menu-button { right: 15px; font-size: 0.9rem; }
+    .carousel-caption { bottom: 10%; padding: 15px; }
+    .btn-reservation { padding: 12px 24px; font-size: 1rem; }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --nav-padding: 10px 2%;
+        --logo-size: 70px;
+        --nav-font: 0.9rem;
+        --carousel-height: 40vh;
+        --caption-title: 1.4rem;
+        --caption-text: 0.9rem;
+        --footer-padding: 25px 2%;
+        --social-size: 1.6rem;
+    }
+    
+    .main-nav { flex-direction: column; min-height: auto; text-align: center; }
+    .logo { margin-bottom: 10px; }
+    .main-nav .nav-links { gap: 8px; margin: 0; flex-wrap: wrap; justify-content: center; }
+    .main-nav a { padding: 4px 8px; margin: 2px 4px; }
+    .menu-button { position: static; transform: none; margin-top: 10px; }
+    .carousel-caption { bottom: 5%; padding: 10px; }
+    .custom-carousel-btn { font-size: 0.9rem; padding: 8px 16px; }
+    .hero-section { padding: 40px 15px; }
+    .hero-section .container { padding: 25px; }
+    .hero-section p { font-size: 1rem; line-height: 1.6; }
+}
