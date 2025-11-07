@@ -273,9 +273,9 @@ body {
 
 @media (max-width: 576px) {
     :root {
-        --nav-padding: 10px 2%;
-        --logo-size: 70px;
-        --nav-font: 0.9rem;
+        --nav-padding: 15px 3%;
+        --logo-size: 60px;
+        --nav-font: 0.85rem;
         --carousel-height: 40vh;
         --caption-title: 1.4rem;
         --caption-text: 0.9rem;
@@ -283,14 +283,81 @@ body {
         --social-size: 1.6rem;
     }
     
-    .main-nav { flex-direction: column; min-height: auto; text-align: center; }
-    .logo { margin-bottom: 10px; }
-    .main-nav .nav-links { gap: 8px; margin: 0; flex-wrap: wrap; justify-content: center; }
-    .main-nav a { padding: 4px 8px; margin: 2px 4px; }
-    .menu-button { position: static; transform: none; margin-top: 10px; }
+    .main-nav { 
+        flex-direction: column; 
+        min-height: auto; 
+        text-align: center; 
+        padding: 15px 3%;
+        gap: 12px;
+    }
+    
+    .logo { 
+        margin-bottom: 12px; 
+        align-self: center;
+    }
+    
+    .main-nav .nav-links { 
+        gap: 6px; 
+        margin: 0; 
+        flex-wrap: wrap; 
+        justify-content: center;
+        width: 100%;
+        order: 2;
+    }
+    
+    .main-nav a { 
+        padding: 6px 10px; 
+        margin: 2px 3px; 
+        font-size: 0.85rem;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+    }
+    
+    .menu-button { 
+        position: static; 
+        transform: none; 
+        margin: 12px auto 0;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        min-height: 44px;
+        order: 3;
+        align-self: center;
+    }
+    
     .carousel-caption { bottom: 5%; padding: 10px; }
     .custom-carousel-btn { font-size: 0.9rem; padding: 8px 16px; }
     .hero-section { padding: 40px 15px; }
     .hero-section .container { padding: 25px; }
     .hero-section p { font-size: 1rem; line-height: 1.6; }
+}
+
+/* Extra small phones (iPhone SE, etc.) */
+@media (max-width: 375px) {
+    :root {
+        --logo-size: 55px;
+        --nav-font: 0.8rem;
+    }
+    
+    .main-nav { 
+        padding: 12px 2%;
+        gap: 10px;
+    }
+    
+    .main-nav a { 
+        padding: 5px 8px; 
+        margin: 1px 2px; 
+        font-size: 0.8rem;
+    }
+    
+    .menu-button { 
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+    
+    .main-nav .nav-links {
+        gap: 4px;
+    }
 }
