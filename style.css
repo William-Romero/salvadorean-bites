@@ -87,11 +87,35 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     transition: background-color 0.3s;
 }
+.btn-menu-home {
+ /*1 centrado */
+    display: block;
+    margin: 15px auto 0 auto;
 
-.menu-button:hover {
-    background-color: var(--burgundy);
+    /*2 color y letra */
+    background-color: var(--wine);
     color: var(--white);
+    font-family: "source sans pro", sans-serif;
+
+    /*3 tamaño y forma */
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
+ /* Efecto flotante del botón */
+    .contact-form button:hover {
+    background-color: var(--burgundy);
+    color: var(--gold);
+    
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 30, 173, 0.2);
+}
+
 .btn-menu-home {
     border: 2px solid var(--gold);
     background-color: var(--wine);
