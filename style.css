@@ -108,24 +108,12 @@ body {
 }
 
  /* Efecto flotante del botón */
-    .contact-form button:hover {
+    .btn-menu-home:hover {
     background-color: var(--burgundy);
     color: var(--gold);
     
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(52, 30, 173, 0.2);
-}
-
-.btn-menu-home {
-    border: 2px solid var(--gold);
-    background-color: var(--wine);
-    color: var(--white);
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: background-color 0.3s;
 }
 
 /* Carousel */
