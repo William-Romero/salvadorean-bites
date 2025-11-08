@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="style.css">
+<style>
+.seccion-carrusel { 
+    position: relative; 
+}
+.imagen-carrusel { 
+    height: 70vh; 
+    object-fit: cover; 
+}
+.boton-carrusel-personalizado { 
+    background-color: var(--wine) !important; 
+    border-color: var(--wine) !important; 
+    color: var(--white) !important; 
+    font-weight: 600; 
+    margin-top: 20px; 
+    display: inline-block !important; 
+    padding: 12px 24px !important; 
+    font-size: 1.1rem !important; 
+    border-radius: 5px !important; 
+    text-decoration: none !important; 
+    transition: all 0.3s ease; 
+}
+
+.boton-carrusel-personalizado:hover { 
+    background-color: var(--burgundy) !important; 
+    border-color: var(--burgundy) !important; 
+}
+
+.seccion-sobre-nosotros { 
+    background-color: var(--cream); 
+    min-height: 100vh; 
+}
+
+.contenedor-historia { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 30px; 
+    margin-bottom: 50px; 
+}
+
+.contenedor-valores { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 25px; 
+    margin-bottom: 50px; 
+}
+
+.contenedor-staff { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 30px; 
+    margin-bottom: 50px; 
+}
+
+.contenedor-eventos { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 30px; 
+    margin-bottom: 50px; 
+}
+
+.contenedor-mision-vision { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 30px; 
+    margin-bottom: 30px; 
+}
+
+.columna-flexible { 
+    flex: 1; 
+    min-width: 300px; 
+}
+
+.contenido-historia-texto,
+.contenido-historia-imagen,
+.carrusel-staff,
+.descripcion-staff,
+.descripcion-eventos,
+.carrusel-eventos,
+.seccion-mision,
+.seccion-vision { 
+    flex: 1; 
+    min-width: 300px; 
+}
+
+.tarjeta-valor { 
+    flex: 1; 
+    min-width: 280px; 
+}
+
+.tarjeta-contenido { 
+    background: rgba(255,255,255,0.95); 
+    padding: 30px; 
+    border-radius: 15px; 
+    border: 2px solid var(--gold); 
+    height: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+.tarjeta-valores { 
+    background: rgba(255,255,255,0.9); 
+    padding: 25px; 
+    border-radius: 10px; 
+    text-align: center; 
+    border: 2px solid var(--gold); 
+    height: 100%; 
+}
+
+.tarjeta-mision { 
+    background: linear-gradient(135deg, var(--gold), #f4d03f); 
+    padding: 30px; 
+    border-radius: 15px; 
+    text-align: center; 
+}
+
+.tarjeta-vision { 
+    background: linear-gradient(135deg, var(--wine), var(--burgundy)); 
+    padding: 30px; 
+    border-radius: 15px; 
+    text-align: center; 
+    color: white; 
+}
+
+.imagen-redonda { 
+    border-radius: 15px; 
+    overflow: hidden; 
+    height: 350px; 
+}
+
+.imagen-responsiva { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+@media (min-width: 1400px) { 
+    .imagen-carrusel { height: 75vh; } 
+    .boton-carrusel-personalizado { font-size: 1.3rem !important; padding: 15px 30px !important; } 
+    .seccion-sobre-nosotros h1 { font-size: 3rem !important; } 
+    .seccion-sobre-nosotros h2 { font-size: 2.2rem !important; } 
+    .seccion-sobre-nosotros h3 { font-size: 2rem !important; } 
+}
+@media (max-width: 768px) { 
+    .imagen-carrusel { height: 50vh; } 
+    .boton-carrusel-personalizado { font-size: 0.9rem !important; padding: 8px 16px !important; } 
+    .seccion-sobre-nosotros h1 { font-size: 2rem !important; } 
+    .seccion-sobre-nosotros h2 { font-size: 1.5rem !important; } 
+}
+@media (max-width: 576px) { 
+    .imagen-carrusel { height: 40vh; } 
+    .seccion-sobre-nosotros { padding: 20px 3% !important; } 
+    .seccion-sobre-nosotros h1 { font-size: 1.8rem !important; margin-bottom: 30px !important; } 
+    .seccion-sobre-nosotros h2 { font-size: 1.3rem !important; } 
+    .seccion-sobre-nosotros h3 { font-size: 1.4rem !important; } 
+}
+@media (max-width: 375px) { 
+    .imagen-carrusel { height: 35vh; } 
+    .boton-carrusel-personalizado { font-size: 0.8rem !important; padding: 6px 12px !important; } 
+    .seccion-sobre-nosotros { padding: 15px 2% !important; } 
+    .seccion-sobre-nosotros h1 { font-size: 1.6rem !important; margin-bottom: 25px !important; } 
+    .seccion-sobre-nosotros h2 { font-size: 1.2rem !important; margin-bottom: 15px !important; } 
+    .seccion-sobre-nosotros h3 { font-size: 1.3rem !important; margin-bottom: 12px !important; } 
+    .seccion-sobre-nosotros p { font-size: 0.9rem !important; line-height: 1.5 !important; } 
+}
+</style>
+</head>
+<body>
+    <header>
+        <nav aria-label="Navegación principal" class="main-nav">
+            <img src="img/Logo-lineal.png" alt="Logo de Salvadorean Bites" class="logo">
+            <div class="nav-links">
+                <a href="galeria.html">Galería</a>
+                <a href="quienes-somos.html">Quienes Somos</a>
+                <a href="promos.html">Promociones</a>
+                <a href="contacto.html">Contáctanos</a>
+            </div>
+            <a href="index.html" class="menu-button">Menú</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="seccion-carrusel">
+            <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+                
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <img src="img/Pupusas.jpg" class="d-block w-100 imagen-carrusel" alt="Pupusas con curtido">
+                        <div class="carousel-caption">
+                            <h5 class="merriweather-font d-none d-md-block">El Sabor Auténtico de la Tradición</h5>
+                            <p class="d-none d-md-block">Recetas auténticas, frescas y hechas a mano.</p>
+                            <a href="#menu" class="btn btn-lg boton-carrusel-personalizado">Ver Menú Completo</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="img/pescado.jpg" class="d-block w-100 imagen-carrusel" alt="Tamales de elote">
+                        <div class="carousel-caption">
+                            <h5 class="merriweather-font d-none d-md-block">Ingredientes Locales y Frescos</h5>
+                            <p class="d-none d-md-block">Calidad inigualable en cada bocado.</p>
+                            <a href="#menu" class="btn btn-lg boton-carrusel-personalizado">Ver Menú Completo</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="img/Carne.jpg" class="d-block w-100 imagen-carrusel" alt="Deliciosa carne asada">
+                        <div class="carousel-caption">
+                            <h5 class="merriweather-font d-none d-md-block">Carnes Premium</h5>
+                            <p class="d-none d-md-block">Cortes selectos preparados a la perfección.</p>
+                            <a href="#menu" class="btn btn-lg boton-carrusel-personalizado">Ver Menú Completo</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="img/Horchata.jpg" class="d-block w-100 imagen-carrusel" alt="Refrescante horchata">
+                        <div class="carousel-caption">
+                            <h5 class="merriweather-font d-none d-md-block">Bebidas Tradicionales</h5>
+                            <p class="d-none d-md-block">Horchata fresca y natural como en casa.</p>
+                            <a href="#menu" class="btn btn-lg boton-carrusel-personalizado">Ver Menú Completo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+  
+        <section class="seccion-sobre-nosotros">
+            <div style="margin: 0; padding: 40px 5%; width: 100%; box-sizing: border-box;">
+                <h1 class="merriweather-font" style="color: var(--wine); margin-bottom: 40px; font-size: 2.5rem; text-align: center;">Quiénes Somos</h1>
+                
+                <div class="contenedor-historia">
+                    <div class="contenido-historia-texto">
+                        <h2 class="merriweather-font" style="color: var(--burgundy); font-size: 1.8rem; margin-bottom: 20px;">Nuestra Historia</h2>
+                        <p class="source-sans-font" style="margin-bottom: 15px;">Salvadorean Bites nació del amor profundo por la gastronomía salvadoreña y el deseo de compartir los sabores auténticos de nuestra tierra con el mundo. Fundado en 2018 por la familia Martínez, nuestro restaurante comenzó como un pequeño sueño en el corazón de San Salvador.</p>
+                        
+                        <p class="source-sans-font" style="margin-bottom: 15px;">Todo inició cuando la abuela María, con más de 50 años de experiencia culinaria, decidió transmitir sus recetas secretas a las nuevas generaciones. Sus pupusas, preparadas con la técnica tradicional que aprendió de su madre, se convirtieron en la base de lo que hoy es Salvadorean Bites.</p>
+                        
+                        <p class="source-sans-font">En 2020, a pesar de los desafíos mundiales, decidimos expandirnos y abrir nuestras puertas en Unicentro Soyapango, llevando la auténtica comida salvadoreña a más familias y creando un espacio donde la tradición y la modernidad se encuentran.</p>
+                    </div>
+                    
+                    <div class="contenido-historia-imagen">
+                        <div class="imagen-redonda">
+                            <img src="https://i.pinimg.com/originals/93/b3/fd/93b3fd6d85a4b6434c98df97605ad592.jpg" alt="Restaurante tradicional salvadoreño" class="imagen-responsiva">
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-valores">
+                    <div class="tarjeta-valor">
+                        <div class="tarjeta-valores">
+                            <i class="bi bi-heart-fill" style="font-size: 2.5rem; color: var(--wine); margin-bottom: 15px;"></i>
+                            <h4 class="merriweather-font" style="color: var(--burgundy); margin-bottom: 15px;">Pasión</h4>
+                            <p class="source-sans-font">Cada plato es preparado con amor y dedicación, manteniendo viva la tradición culinaria salvadoreña en cada bocado.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tarjeta-valor">
+                        <div class="tarjeta-valores">
+                            <i class="bi bi-award-fill" style="font-size: 2.5rem; color: var(--wine); margin-bottom: 15px;"></i>
+                            <h4 class="merriweather-font" style="color: var(--burgundy); margin-bottom: 15px;">Calidad</h4>
+                            <p class="source-sans-font">Utilizamos únicamente ingredientes frescos y de la más alta calidad, seleccionados cuidadosamente para garantizar sabores excepcionales.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tarjeta-valor">
+                        <div class="tarjeta-valores">
+                            <i class="bi bi-people-fill" style="font-size: 2.5rem; color: var(--wine); margin-bottom: 15px;"></i>
+                            <h4 class="merriweather-font" style="color: var(--burgundy); margin-bottom: 15px;">Familia</h4>
+                            <p class="source-sans-font">Somos más que un restaurante, somos una familia extendida que recibe a cada cliente con la calidez del hogar salvadoreño.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-staff">
+                    <div class="carrusel-staff">
+                        <div id="staffCarousel" class="carousel slide" data-bs-ride="carousel" style="border-radius: 15px; overflow: hidden;">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#staffCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Equipo de cocina"></button>
+                                <button type="button" data-bs-target="#staffCarousel" data-bs-slide-to="1" aria-label="Gerente profesional"></button>
+                                <button type="button" data-bs-target="#staffCarousel" data-bs-slide-to="2" aria-label="Personal de servicio"></button>
+                            </div>
+
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://icgmaster.net/wp-content/uploads/empleados-de-restaurantes.jpg" class="d-block w-100" alt="Equipo de cocina profesional" style="height: 350px; object-fit: cover;">
+                                </div>
+                                
+                                <div class="carousel-item">
+                                    <img src="https://img.freepik.com/fotos-premium/tableta-mujer-feliz-camarera-gerencia-cafeteria-pedir-inventario-o-verificar-existencias-restaurante-barista-o-gerente-tecnologia-pequenas-empresas-africanas-cafeteria_590464-193265.jpg" class="d-block w-100" alt="Gerente profesional del restaurante" style="height: 350px; object-fit: cover;">
+                                </div>
+                                
+                                <div class="carousel-item">
+                                    <img src="https://img.freepik.com/foto-gratis/equipo-cocina-feliz-vistiendo-uniforme-pie-junto-mesa-verduras-picadas-posando-camara-cocina-restaurante_613910-18631.jpg?semt=ais_hybrid&w=740&q=80" class="d-block w-100" alt="Personal de servicio especializado" style="height: 350px; object-fit: cover;">
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#staffCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#staffCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Siguiente</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="descripcion-staff">
+                        <div class="tarjeta-contenido">
+                            <h3 class="merriweather-font" style="color: var(--wine); margin-bottom: 20px; font-size: 1.9rem;">Nuestro Valioso Staff</h3>
+                            
+                            <p class="source-sans-font" style="margin-bottom: 15px;">Detrás de cada plato excepcional está nuestro increíble equipo de trabajo. Desde nuestros talentosos chefs que dominan las técnicas tradicionales, hasta nuestro amable personal de servicio que recibe a cada cliente como familia.</p>
+                            
+                            <p class="source-sans-font" style="margin-bottom: 15px;">Cada miembro de nuestro staff comparte la pasión por la gastronomía salvadoreña y el compromiso con la excelencia. Su dedicación, experiencia y calidez humana son los pilares que hacen posible la experiencia única de Salvadorean Bites.</p>
+                            
+                            <p class="source-sans-font" style="margin-bottom: 0; font-weight: 600; color: var(--burgundy);">Porque creemos que un gran restaurante se construye con grandes personas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-eventos">
+                    <div class="descripcion-eventos">
+                        <div class="tarjeta-contenido">
+                            <h3 class="merriweather-font" style="color: var(--wine); margin-bottom: 20px; font-size: 1.9rem;">Nuestros Eventos</h3>
+                            
+                            <p class="source-sans-font" style="margin-bottom: 15px;">En Salvadorean Bites ofrecemos el espacio perfecto para celebrar tus momentos más especiales. Desde cenas familiares íntimas hasta grandes celebraciones corporativas, nuestras instalaciones se adaptan a cualquier tipo de evento.</p>
+                            
+                            <p class="source-sans-font" style="margin-bottom: 15px;">Contamos con salones privados, catering personalizado y un ambiente acogedor que hará de tu evento una experiencia inolvidable. Nuestro equipo se encarga de cada detalle para que solo tengas que disfrutar.</p>
+                            
+                            <p class="source-sans-font" style="margin-bottom: 0; font-weight: 600; color: var(--burgundy);">¡Permítenos ser parte de tus celebraciones más importantes!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="carrusel-eventos">
+                        <div id="eventosCarousel" class="carousel slide" data-bs-ride="carousel" style="border-radius: 15px; overflow: hidden;">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#eventosCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Eventos corporativos"></button>
+                                <button type="button" data-bs-target="#eventosCarousel" data-bs-slide-to="1" aria-label="Cenas privadas"></button>
+                                <button type="button" data-bs-target="#eventosCarousel" data-bs-slide-to="2" aria-label="Catering empresarial"></button>
+                                <button type="button" data-bs-target="#eventosCarousel" data-bs-slide-to="3" aria-label="Servicios de catering"></button>
+                            </div>
+
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://media.licdn.com/dms/image/v2/D4D12AQHwNVon_jvswA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1675171907037?e=2147483647&v=beta&t=jjmaSb4VZw7v31DAtGm8H518LMx6wfxazt73Eby4PrQ" class="d-block w-100" alt="Eventos corporativos" style="height: 350px; object-fit: cover;">
+                                </div>
+                                
+                                <div class="carousel-item">
+                                    <img src="https://cocktailacademybangkok.com/wp-content/uploads/2025/02/1557-min-1024x683.jpg" class="d-block w-100" alt="Cenas privadas" style="height: 350px; object-fit: cover;">
+                                </div>
+                                
+                                <div class="carousel-item">
+                                    <img src="https://blog.fundacionjuanxxiii.org/hubfs/Conoce%20el%20catering%20para%20empresas%20100%25%20solidario.jpg" class="d-block w-100" alt="Catering empresarial" style="height: 350px; object-fit: cover;">
+                                </div>
+                                
+                                <div class="carousel-item">
+                                    <img src="https://dinicatering.com/wp-content/uploads/2021/12/Comida-Catering.jpg" class="d-block w-100" alt="Servicios de catering" style="height: 350px; object-fit: cover;">
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#eventosCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#eventosCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Siguiente</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-mision-vision">
+                    <div class="seccion-mision">
+                        <div class="tarjeta-mision">
+                            <h3 class="merriweather-font" style="color: #1a1a1a; margin-bottom: 15px;">Nuestra Misión</h3>
+                            <p class="source-sans-font" style="color: #333; font-weight: 500;">Preservar y celebrar la rica tradición culinaria salvadoreña, ofreciendo experiencias gastronómicas auténticas que conecten a las personas con sus raíces y creen nuevos recuerdos familiares.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="seccion-vision">
+                        <div class="tarjeta-vision">
+                            <h3 class="merriweather-font" style="margin-bottom: 15px;">Nuestra Visión</h3>
+                            <p class="source-sans-font" style="opacity: 0.95; font-weight: 500;">Ser el restaurante de referencia en El Salvador para la comida tradicional, expandiendo nuestra presencia mientras mantenemos la autenticidad y calidad que nos caracteriza.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+<footer class="main-footer">
+    <div class="container">
+    
+        <p><a href="https://wa.me/50369739021"><i class="bi bi-whatsapp"></i> +503 6973-9021</a></p>
+        <p><a href="tel:+50322223333"><i class="bi bi-telephone"></i> +503 2222-3333</a></p>
+        <p><a href="mailto:contacto@salvadoreanbites.com"><i class="bi bi-envelope"></i> contacto@salvadoreanbites.com</a></p>
+        <p><a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15504.052095698684!2d-89.14685376716508!3d13.717660932513878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f63377992279d1f%3A0x14961537e6a76f3f!2sUnicentro%20Soyapango%2C%20San%20Salvador!5e0!3m2!1ses-419!2ssv!4v1760822301931!5m2!1ses-419!2ssv" target="_blank"><i class="bi bi-geo-alt"></i> Unicentro Soyapango, San Salvador</a></p>
+
+        <div class="reservation-button">
+            <a href="reservas.html" class="btn-reservation">
+                <i class="bi bi-calendar-check"></i> ¡Haz tu reserva hoy!
+            </a>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/salvadoreanbites" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/salvadoreanbites" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.tiktok.com/@salvadoreanbites" target="_blank" title="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://wa.me/50369739021" target="_blank" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+
+        <small>© 2025 Salvadorean Bites. Todos los derechos reservados.</small>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
