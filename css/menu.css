@@ -1,97 +1,83 @@
- /* ---------------------------
-       Tarjetas de menú (entradas, platos, postres, etc.)
-       Estilo de fondo, sombra y espaciado para cada sección.
-       --------------------------- */
-    .menu-section {
-        background: #fff;
-        border-radius: 12px;
-        padding: 1.5rem;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-        border: 1px solid rgba(0,0,0,0.04);
-        margin-bottom: 1.5rem;
-    }
+/* -----1. Estructura 3 colummnas(layout) responsivo con los estilos y tipografia de  main.css ----- */
 
-    .section-title h3 {
-        margin: 0 0 1rem;
-        color: var(--brand-bg);
-        font-size: 1.2rem;
-        border-bottom: 2px solid var(--brand-bg);
-        padding-bottom: 0.5rem;
-    }
-
-    /* Rejilla interna para cada item del menú: nombre/descripcion + precio */
-    .section-grid {
-        display: grid;
-        grid-template-columns: 1fr auto; /* texto a la izquierda, precio a la derecha */
-        gap: 0.5rem 1rem;
-        align-items: center;
-        margin-bottom: 1rem;
-    }
-
-    .section-grid:last-child {
-        margin-bottom: 0;
-    }
-
-    .section-grid .item h5 {
-        margin: 0 0 0.2rem;
-        font-weight: 700;
-        font-size: 1rem;
-    }
-
-    .section-grid .item p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 0.9rem;
-    }
-
-    /* Estilo del contenedor de precio */
-    .section-grid .price {
-        justify-self: end;
-        font-weight: 700;
-        color: #0d6efd; /* color de acento para el precio */
-        background: rgba(13,110,253,0.06);
-        padding: 0.35rem 0.6rem;
-        border-radius: 8px;
-        min-width: 56px;
-        text-align: right;
-        font-size: 0.95rem;
-    }
-    /* Estilo responsivo para pantallas pequeñas */
-    @media (max-width: 600px) {
-        .section-grid {
-            grid-template-columns: 1fr; /* una columna */
-            gap: 0.5rem 0;
-        }
-        .section-grid .price {
-            justify-self: start;
-        }
-    }
-       /* Miniaturas en el menú */
-.section-grid {
-  grid-template-columns: auto 1fr auto; /* imagen | texto | precio */
-  gap: 0.75rem 1rem;
-  align-items: center;
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
-/* La imagen pequeña a la izquierda */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.col {
+    flex: 1 1 300px; /* crece, encoge, tamaño base */
+    max-width: 450px;
+    min-width: 280px;
+}
+
+/* -----2. diseño de secciones y titulos----- */
+
+/*----- Titulo "menú" (h2) siguiendo (color, fuente, tamaño) de main.css ----- */
+.section-heading {
+    text-align: center;
+}
+/* ----- Espacio entre secciones ----- */
+.menu-section {
+    margin-bottom: 30px;
+    
+}
+/* ----- Subtítulos de secciones (h3) ----- */
+.section-title h3 {
+    border-bottom: 3px solid #eee;
+    padding-bottom: 10px;
+}
+/* ----- Subtítulos de subsecciones (h4) ----- */
+.submenu-title h4 {
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 6px;
+}
+
+/*diseño de cada item del menú (nombre, descripción, precio) siguiendo main.css */
+.section-grid .item h5 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/*la imagen miniatura del menú*/
 .section-grid .thumb {
-  width: 56px;
-  height: 56px;
-  border-radius: 8px;
-  object-fit: cover;          /* recorte limpio sin deformar */
-  display: block;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border: 1px solid rgba(0,0,0,0.06);
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
-/* En pantallas pequeñas puedes reducir un poco */
-@media (max-width: 480px) {
-  .section-grid .thumb {
-    width: 48px;
-    height: 48px;
-  }
+/* Contenedor del tituto (h5) y descripción (p) */
+.section-grid .item {
+    flex-grow: 1;
 }
 
-/* ---------------------------
-       Fin de las tarjetas de menú
-       --------------------------- */
+/*precio del item del menú*/
+.section-grid .price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    flex-shrink: 0;
+    padding-left: 10px;
+}
+
+/*Ajuste para moviles*/
+@media (max-width: 768px) {
+    .menu-container {
+       width: 100%;
+       margin: 0;
+       padding: 15px;
+    }
+}
