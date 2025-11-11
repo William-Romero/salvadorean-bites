@@ -142,8 +142,8 @@
     z-index: 99; /* Asegura que esté por encima de otros elementos */
     border: none;
     outline: none;
-    background-color: var(--wine); /* Color de fondo */
-    background-color: var(--color-bottom); /* Color del icono */
+    background-color: var(--color-bottom); /* Color de fondo */
+    color: #8B1538; /* Color del icono */
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
