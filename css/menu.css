@@ -1,38 +1,89 @@
-/* Layout principal */
-.menu-container {
-    max-width: 1200px;
+/* 1. Variables Globales */
+:root {
+    /* Colores personalizados */
+    --color-parrafo: #333;
+    --color-h1: #722F37;
+    --color-h2: #8B1538;
+    --color-h3: #722F37;
+    --color-h4: #8B1538;
+    --color-h5: #722F37; /* títulos de items */
+    --color-h6: #8B1538;
+    --color-borde-titulo: #D4AF37; 
+    --color-precio: #350bf5;
+    
+    /* Tipografías */
+    --fuente-parrafo: "Source Sans Pro", sans-serif;
+    --fuente-encabezado: "Merriweather", serif;
+    
+    /* Tamaño */
+    --tamano-texto-base: 1rem;
+}
+
+/* 2. Estilos de Layout Principal (La estructura de la página) */
+.menu-wrapper {
+    width: 100%;
+    max-width: 1400px; /* Ancho máximo para pantallas grandes */
     margin: 0 auto;
-    padding: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.row {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+.columns-container {
+    display: flex;
+    flex-direction: column; /* Apilado en móvil por defecto */
+    justify-content: space-between;
+    gap: 20px;
 }
 
-/* Secciones del menú */
+/* En pantallas grandes, se divide en 2 columnas */
+@media (min-width: 768px) {
+    .columns-container {
+        flex-direction: row; /* Lado a lado en escritorio */
+    }
+}
+
+.left-col,
+.right-col {
+    width: 100%; /* Ocupa todo el ancho en móvil */
+    padding: 40px;
+}
+
+@media (min-width: 768px) {
+    .left-col,
+    .right-col {
+        width: 50%; /* Mitad y mitad en escritorio */
+    }
+}
+
+/* 3. Componentes del Menú*/
+
+/* Contenedor de cada sección (Entradas, Postres, etc.) */
 .menu-section {
-    background: #fff;
+    background: #FDF5E6;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     padding: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    max-width: 800px; /* Ancho máximo para mejor legibilidad */
+    margin-left: auto; /* Centramos la sección */
+    margin-right: auto;
 }
 
+/* Título de la sección (ej. "Entradas") */
 .section-title {
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid var(--color-borde-titulo); 
 }
 
 .section-title h3 {
     font-size: 1.5rem;
-    color: #333;
+    color: var(--color-h3); 
     margin: 0;
+    font-family: var(--fuente-encabezado);
 }
 
-/* Grid de items */
+/* Grid para cada item individual (plato) */
 .section-grid {
     display: grid;
     grid-template-columns: 80px 1fr auto;
@@ -43,86 +94,64 @@
 }
 
 .section-grid:last-child {
-    border-bottom: none;
+    border-bottom: none; /* Se elimina el borde inferior del último item */
 }
 
-/* Imágenes */
+/* Miniatura (Imagen) */
 .thumb {
-    width: 80px;
+    width: 100px;
     height: 80px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
-/* Información del item */
+/* Información del item (Nombre y descripción) */
 .item {
     padding: 0 1rem;
+    text-align: left; /* Generalmente mejor para leer descripciones */
 }
 
 .item h5 {
     margin: 0 0 0.5rem 0;
     font-size: 1.1rem;
-    color: #222;
+    color: var(--color-h5); /* ¡Usando tu variable! */
+    font-family: var(--fuente-encabezado);
 }
 
 .item p {
     margin: 0;
     font-size: 0.9rem;
-    color: #666;
+    color: var(--color-parrafo); /* ¡Usando tu variable! */
+    font-family: var(--fuente-parrafo);
 }
 
 /* Precio */
 .price {
     font-weight: bold;
-    color: #222;
+    color: var(--color-precio); /* ¡Usando tu variable! */
     font-size: 1.1rem;
+    font-family: var(--fuente-parrafo);
 }
 
-/* Submenu sections */
-.submenu-section {
-    margin: 2rem 0 1rem;
-}
+/* 4. Responsividad (Móvil) */
+/* (Nota: Gran parte de la responsividad ya se manejó arriba "mobile-first") */
 
-.submenu-title h4 {
-    color: #666;
-    font-size: 1.2rem;
-    margin: 0;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #eee;
-}
+@media (max-width: 768px) {
+    /* El .columns-container ya se vuelve 'column' por defecto */
+    
+    .left-col, .right-col {
+        padding: 10px 0; /* Menos padding en móvil */
+    }
 
-/* Media Queries */
-/* Tablets (768px and up) */
-@media screen and (min-width: 768px) {
+    /* Hacemos que el grid del item sea más amigable en pantallas pequeñas */
     .section-grid {
-        grid-template-columns: 100px 1fr auto;
+        grid-template-columns: 60px 1fr auto; /* Imagen más pequeña */
+        gap: 0.5rem;
+        padding: 0.5rem;
     }
-    
+
     .thumb {
-        width: 100px;
-        height: 100px;
+        width: 60px;
+        height: 60px;
     }
-}
-
-/* Desktop (1024px and up) */
-@media screen and (min-width: 1024px) {
-    .row {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .menu-section {
-        margin-bottom: 0;
-    }
-}
-
-/* Hover effects */
-.section-grid:hover {
-    background: #f9f9f9;
-    transform: translateY(-2px);
-    transition: all 0.3s ease;
-}
-
-.thumb:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
 }
