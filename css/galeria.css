@@ -240,3 +240,67 @@ aside img {
     max-width: 90%;
   }
 }
+
+/* ===== configuracion footer ===== */
+
+.main-footer {
+    background-color: #6B2E34; 
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+
+.main-footer .footer p,
+.main-footer small {
+    margin: 8px 0;
+    font-size: 1.1rem;
+}
+
+
+.main-footer a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.main-footer a:hover {
+    color: #E3C24A; 
+}
+
+/* ===== boton de reserva ===== */
+.btn-reservation {
+    display: inline-block;
+    background: linear-gradient(90deg, #D4AF37, #EAC94D);
+    padding: 18px 40px;
+    border-radius: 40px;
+    color: #5A3A00;
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin: 25px auto;
+}
+
+.btn-reservation i {
+    margin-right: 10px;
+    font-size: 1.4rem;
+}
+
+/* ===== iconos ===== */
+.social-links {
+    margin-top: 25px;
+}
+
+.social-links a {
+    font-size: 2rem;
+    margin: 0 12px;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+    color: #E3C24A;
+}
+
