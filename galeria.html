@@ -1,116 +1,251 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-<link rel="stylesheet" href="galeria.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menú Salvadorean Bites</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/galeria.css">
 </head>
+
 <body>
-    <header>
-        <nav aria-label="Navegación principal" class="main-nav">
-            <img src="img/Logo-lineal.png" alt="Logo de Salvadorean Bites" class="logo">
-            <div class="nav-links">
-                <a href="galeria.html">Galería</a>
-                <a href="quienes-somos.html">Quienes Somos</a>
-                <a href="promos.html">Promociones</a>
-                <a href="contacto.html">Contáctanos</a>
-            </div>
-            <a href="index.html" class="menu-button">Menú</a>
+
+<header>
+    <nav aria-label="Navegación principal" class="main-nav">
+        <img src="img/Logo-lineal.png" alt="Logo de Salvadorean Bites" class="logo">
+
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="galeria.html">Galería</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="promos.html">Promociones</a>
+            <a href="contacto.html">Contáctanos</a>
+        </div>
+
+        <a href="menu.html" class="menu-button">Menú</a>
     </nav>
-    </header>
+</header>
 
-    <main>
-        
-        <section class="carousel-section">
-            <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-                
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                </div>
+<body>
 
-                <div class="carousel-inner">
-                    
-                    <div class="carousel-item active" data-bs-interval="5000">
-                        <img src="img/Pupusas.jpg" class="d-block w-100 carousel-img" alt="Pupusas con curtido">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="merriweather-font">El Sabor Auténtico de la Tradición</h5>
-                            <p>Recetas auténticas, frescas y hechas a mano.</p>
-                            <a href="#menu" class="btn btn-lg custom-carousel-btn">Ver Menú Completo</a>
-                        </div>
-                    </div>
+<main class="container my-5">
 
-                    <div class="carousel-item" data-bs-interval="5000">
-                        <img src="img/pescado.jpg" class="d-block w-100 carousel-img" alt="Tamales de elote">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="merriweather-font">Ingredientes Locales y Frescos</h5>
-                            <p>Calidad inigualable en cada bocado.</p>
-                        </div>
-                    </div>
+    <h1 class="text-center mb-4">Nuestros Platillos</h1>
+    <p class="text-center text-muted mb-5">
+        Descubre la variedad de sabores salvadoreños en cada plato.
+    </p>
 
-                    <div class="carousel-item" data-bs-interval="5000">
-                        <img src="img/Carne.jpg" class="d-block w-100 carousel-img" alt="Deliciosa carne asada">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="merriweather-font">Carnes Premium</h5>
-                            <p>Cortes selectos preparados a la perfección.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="5000">
-                        <img src="img/Horchata.jpg" class="d-block w-100 carousel-img" alt="Refrescante horchata">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="merriweather-font">Bebidas Tradicionales</h5>
-                            <p>Horchata fresca y natural como en casa.</p>
-                        </div>
-                    </div>
-                    
-                    
-                </div>
+    <div class="row justify-content-between align-items-start">
 
-                <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+        <!-- ======= Especial del día ======= -->
+        <aside class="col-lg-2 col-md-3 mb-4 text-center">
+            <h5 class="fw-bold mb-3">Especiales del Día</h5>
+
+            <img src="https://cdn7.kiwilimon.com/recetaimagen/2806/400x400/25790.jpg.webp" class="img-fluid rounded mb-3 shadow-sm" alt="pupusas">
+            <img src="https://buenprovecho.hn/wp-content/uploads/2023/10/Sopa-de-olla.png" class="img-fluid rounded mb-3 shadow-sm" alt="sopa del dia">
+
+            <div class="d-grid gap-2">
+                <a href="promos.html" class="btn-custom">Ver Ofertas</a>
+                <a href="contacto.html" class="btn-custom">Ordenar Ahora</a>
             </div>
-        </section>
-        
-  
-    </main>
+        </aside>
 
+        <!-- ======= Platillos ======= -->
+        <section class="col-lg-7 col-md-6">
+
+            <div class="row justify-content-center g-4">
+
+                <!-- Entrada -->
+                <div class="col-md-6">
+                    <div class="card card-platillo shadow-sm border-0" data-index="0">
+                        <h5 class="text-center card-title mt-3">Entradas</h5>
+
+                        <img src="https://i.ytimg.com/vi/dp6oQ7cekPc/maxresdefault.jpg" alt="Yuca frita" class="card-img-top platillo-img">
+
+                        <div class="card-body text-center">
+                            <p class="card-text platillo-desc">
+                                Yuca frita – Deliciosas y crujientes yucas fritas, acompañadas de salsa de tomate y curtido.
+                            </p>
+
+                            <div class="btn-group mt-3">
+                                <button class="btn-nav" onclick="cambiarImagen(this, -1)">Anterior</button>
+                                <button class="btn-nav" onclick="cambiarImagen(this, 1)">Siguiente</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Platos fuertes -->
+                <div class="col-md-6">
+                    <div class="card card-platillo shadow-sm border-0" data-index="1">
+                        <h5 class="text-center card-title mt-3">Platos Fuertes</h5>
+
+                        <img src="https://mandolina.co/wp-content/uploads/2024/06/carne-asada-a-la-parrilla-1080x550-1-1200x900.jpg" alt="Carne asada" class="card-img-top platillo-img">
+
+                        <div class="card-body text-center">
+                            <p class="card-text platillo-desc">
+                                Carne asada – Deliciosa carne a la parrilla, servida con frijoles y ensalada.
+                            </p>
+
+                            <div class="btn-group mt-3">
+                                <button class="btn-nav" onclick="cambiarImagen(this, -1)">Anterior</button>
+                                <button class="btn-nav" onclick="cambiarImagen(this, 1)">Siguiente</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Fila 2 -->
+            <div class="row justify-content-center g-4 mt-4">
+
+                <!-- Bebidas -->
+                <div class="col-md-6">
+                    <div class="card card-platillo shadow-sm border-0" data-index="2">
+                        <h5 class="text-center card-title mt-3">Bebidas</h5>
+
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1znaTgVqCEMw2DO0i_KYHXJFLLE4P3lpVw&s" alt="Bebidas" class="card-img-top platillo-img">
+
+                        <div class="card-body text-center">
+                            <p class="card-text platillo-desc">
+                                Refrescos tradicionales – Horchata, tamarindo o jamaica.
+                            </p>
+
+                            <div class="btn-group mt-3">
+                                <button class="btn-nav" onclick="cambiarImagen(this, -1)">Anterior</button>
+                                <button class="btn-nav" onclick="cambiarImagen(this, 1)">Siguiente</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Postres -->
+                <div class="col-md-6">
+                    <div class="card card-platillo shadow-sm border-0" data-index="3">
+                        <h5 class="text-center card-title mt-3">Postres</h5>
+
+                        <img src="https://mojo.generalmills.com/api/public/content/d0OzlvMawUWJ6G_dDAdWQg_gmi_hi_res_jpeg.jpeg?v=271f2d6e&t=16e3ce250f244648bef28c5949fb99ff" alt="Flan" class="card-img-top platillo-img">
+
+                        <div class="card-body text-center">
+                            <p class="card-text platillo-desc">
+                                Flan – Delicioso flan de vainilla, suave y cremoso.
+                            </p>
+
+                            <div class="btn-group mt-3">
+                                <button class="btn-nav" onclick="cambiarImagen(this, -1)">Anterior</button>
+                                <button class="btn-nav" onclick="cambiarImagen(this, 1)">Siguiente</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ======= Servicios ======= -->
+        <aside class="col-lg-2 col-md-3 mb-4 text-center">
+            <h5 class="fw-bold mb-3">Nuestros Servicios</h5>
+
+            <div class="mb-4">
+                <i class="bi bi-truck display-5 text-warning"></i>
+                <p class="mt-2 fw-semibold">Delivery Rápido</p>
+            </div>
+
+            <div class="mb-4">
+                <i class="bi bi-people-fill display-5 text-warning"></i>
+                <p class="mt-2 fw-semibold">Catering para Eventos</p>
+            </div>
+
+            <a href="Reservas.html" class="btn-custom mb-2">Reservar Mesa</a>
+        </aside>
+
+    </div>
+
+</main>
 
 <footer id="footer" class="main-footer">
+
     <div class="container footer">
-    
+
         <p><a href="https://wa.me/50369739021"><i class="bi bi-whatsapp"></i> +503 6973-9021</a></p>
         <p><a href="tel:+50322223333"><i class="bi bi-telephone"></i> +503 2222-3333</a></p>
         <p><a href="mailto:contacto@salvadoreanbites.com"><i class="bi bi-envelope"></i> contacto@salvadoreanbites.com</a></p>
-        <p><a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15504.052095698684!2d-89.14685376716508!3d13.717660932513878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f63377992279d1f%3A0x14961537e6a76f3f!2sUnicentro%20Soyapango%2C%20San%20Salvador!5e0!3m2!1ses-419!2ssv!4v1760822301931!5m2!1ses-419!2ssv" target="_blank"><i class="bi bi-geo-alt"></i> Unicentro Soyapango, San Salvador</a></p>
+        <p><a href="https://maps.app.goo.gl/uDmknGGWLnzTpY1L8" target="_blank"><i class="bi bi-geo-alt"></i> Unicentro Soyapango, San Salvador</a></p>
 
         <div class="reservation-button">
-            <a href="reservas.html" class="btn-reservation">
+            <a href="Reservas.html" class="btn-reservation">
                 <i class="bi bi-calendar-check"></i> ¡Haz tu reserva hoy!
             </a>
         </div>
 
         <div class="social-links">
-            <a href="https://www.instagram.com/salvadoreanbites" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.facebook.com/salvadoreanbites" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.tiktok.com/@salvadoreanbites" target="_blank" title="TikTok"><i class="bi bi-tiktok"></i></a>
-            <a href="https://wa.me/50369739021" target="_blank" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-            </div>
+            <a href="https://www.instagram.com/salvadorean_bites?igsh=N204cXpnN2x5aXZl&utm_source=qr" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1BQvKdoDMD/?mibextid=wwXIfr" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.tiktok.com/@salvadoreanbites" target="_blank"><i class="bi bi-tiktok"></i></a>
+            <a href="https://wa.me/50369739021" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
 
         <small>© 2025 Salvadorean Bites. Todos los derechos reservados.</small>
+
     </div>
+
 </footer>
 
-<!-- Bootstrap JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+<!-- ========== Script de cambio de imágenes ========== -->
+<script>
+    const platillos = [
+        [
+            { img: "https://cdn0.recetasgratis.net/es/posts/0/7/0/yuca_frita_con_mojo_rojo_62070_orig.jpg", desc: "Yuca frita – Deliciosas y crujientes yucas fritas, acompañadas de salsa de tomate y curtido." },
+            { img: "https://cdn-ilddihb.nitrocdn.com/MgqZCGPEMHvMRLsisMUCAIMWvgGMxqaj/assets/images/optimized/rev-9baa5ce/www.goya.com/wp-content/uploads/2023/10/buffalo-chicken-empanada-with-blue-cheese-dip-900x900.jpg", desc: "Empanadas de pollo – Rellenas de pollo desmenuzado, acompañadas de salsa de tomate y curtido." },
+            { img: "https://aprende.guatemala.com/wp-content/uploads/2018/01/Receta-para-hacer-pl%C3%A1tanos-fritos-de-Guatemala.jpg", desc: "Plátanos fritos – Maduros fritos, servidos con crema y frijoles." }
+        ],
+        [
+            { img: "https://mandolina.co/wp-content/uploads/2024/06/carne-asada-a-la-parrilla-1080x550-1-1200x900.jpg", desc: "Carne asada – Deliciosa carne a la parrilla, servida con frijoles y ensalada." },
+            { img: "https://comedera.com/wp-content/uploads/sites/9/2024/12/Muslos-de-pollo-a-la-parrilla-con-limon-y-hierbas.jpg", desc: "Pollo a la parrilla – Jugoso y acompañado de arroz y ensalada." },
+            { img: "https://www.recetasnestle.com.do/sites/default/files/srh_recipes/51c163dc4aa8a50934061f69dbdea9ba.jpg", desc: "Pescado frito – Servido con arroz y ensalada." },
+            { img: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Pupusas_El_Salvador_Centro_America.JPG", desc: "Pupusas tradicionales – De frijol con queso, queso y revueltas." },
+            { img: "https://cdn-pro.elsalvador.com/wp-content/uploads/2025/08/vida-gastronomia-salvadorena-pupusa-loroco-1.jpg", desc: "Pupusas de especialidad – Chorizo de Cojutepeque, Pollo, Pulled Pork, Birria." }
+        ],
+        [
+            { img: "https://www.goodnes.com/sites/g/files/jgfbjl321/files/srh_recipes/4992925f9ec029618f1e5b7d8478371c.jpg", desc: "Horchata – Tradicional bebida a base de semillas molidas, dulce y refrescante." },
+            { img: "https://www.infobae.com/new-resizer/uG1_j7rxuCS3kHhMu-ThO0rrDEo=/arc-anglerfish-arc2-prod-infobae/public/IDNEPYYXRJBFHBLLZZ5BO5OJDY.jpg", desc: "Agua de jamaica – Refrescante y natural, ideal para acompañar cualquier platillo." },
+            { img: "https://www.nestleprofessional-latam.com/sites/default/files/styles/np_hero_small_small/public/2022-10/Nescafe%CC%81_Espresso_2022ok%20%281%29.png?itok=Ux0Tk86r", desc: "Café salvadoreño – Caliente, aromático y de sabor intenso." }
+        ],
+        [
+            { img: "https://mojo.generalmills.com/api/public/content/d0OzlvMawUWJ6G_dDAdWQg_gmi_hi_res_jpeg.jpeg?v=271f2d6e&t=16e3ce250f244648bef28c5949fb99ff", desc: "Flan – Delicioso flan de vainilla, suave y cremoso." },
+            { img: "https://www.allrecipes.com/thmb/UwNk5NAiF1Eh47YEE8L7LuKduNs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/7399-tres-leches-milk-cake-ddmfs-beauty-4x3-BG-25699-342a9c33649b439884f0edab17fdacf2.jpg", desc: "Tres leches – Esponjoso pastel empapado en tres tipos de leche." },
+            { img: "https://www.chsugar.com/sites/default/files/2024-09/Web_Hero_Image-El%20Salvador%20Cheese%20Pound%20Cake%20%28Quesadilla%20Salvadoren%CC%83a%29%2005.jpg", desc: "Quesadilla de la casa – Tradicional y perfecta para acompañar el café." }
+        ]
+    ];
 
+    const indices = [0, 0, 0, 0];
+
+    function cambiarImagen(btn, dir) {
+        const card = btn.closest(".card-platillo");
+        const index = parseInt(card.dataset.index, 10);
+        const img = card.querySelector(".platillo-img");
+        const desc = card.querySelector(".platillo-desc");
+
+        const lista = platillos[index];
+        indices[index] = (indices[index] + dir + lista.length) % lista.length;
+
+        const actual = lista[indices[index]];
+
+        img.style.transition = desc.style.transition = "opacity 0.3s";
+        img.style.opacity = desc.style.opacity = 0;
+
+        setTimeout(() => {
+            img.src = actual.img;
+            desc.textContent = actual.desc;
+
+            img.style.opacity = desc.style.opacity = 1;
+        }, 300);
+    }
+</script>
+
+</body>
+</html>
