@@ -1,195 +1,189 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Menú Salvadorean Bites</title> 
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Menú Salvadorean Bites</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">  
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/galeria.css">
-</head>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
 
-<body>
-
-<header>
-    <nav aria-label="Navegación principal" class="main-nav">
-        <img src="img/Logo-lineal.png" alt="Logo de Salvadorean Bites" class="logo">
-
-        <div class="nav-links">
-            <a href="index.html">Inicio</a>
-            <a href="galeria.html">Galería</a>
-            <a href="nosotros.html">Nosotros</a>
-            <a href="promos.html">Promociones</a>
-            <a href="contacto.html">Contáctanos</a>
-        </div>
-
-        <a href="menu.html" class="menu-button">Menú</a>
-    </nav>
-</header>
-
-<main class="container my-5">
-
-    <h1 class="text-center mb-4">Nuestros Platillos</h1>
-    <p class="text-center text-muted mb-5">
-        Descubre la variedad de sabores salvadoreños en cada plato.
-    </p>
-
-    <div class="row justify-content-between align-items-start">
-
-        <!-- ======= Especiales del Día ======= -->
-        <aside class="col-lg-2 col-md-3 mb-4 text-center">
-            <h5 class="fw-bold mb-3">Especiales del Día</h5>
-
-            <img src="https://cdn7.kiwilimon.com/recetaimagen/2806/400x400/25790.jpg.webp" class="img-fluid rounded mb-3 shadow-sm" alt="pupusas">
-            <img src="https://buenprovecho.hn/wp-content/uploads/2023/10/Sopa-de-olla.png" class="img-fluid rounded mb-3 shadow-sm" alt="sopa del dia">
-
-            <div class="d-grid gap-2">
-                <a href="promos.html" class="btn-custom">Ver Ofertas</a>
-                <a href="contacto.html" class="btn-custom">Ordenar Ahora</a>
-            </div>
-        </aside>
-
-        <!-- ======= Categoria ======= -->
-        <section class="col-lg-7 col-md-6">
-
-            <div class="row justify-content-center g-4">
-
-                <!-- Entrada -->
-                <div class="col-md-6">
-                    <div class="card card-platillo shadow-sm border-0" data-index="0">
-                        <h5 class="text-center card-title mt-3">Entradas</h5>
-
-                        <img src="https://i.ytimg.com/vi/dp6oQ7cekPc/maxresdefault.jpg" alt="Yuca frita" class="card-img-top platillo-img">
-
-                        <div class="card-body text-center">
-                            <p class="card-text platillo-desc">
-                                Yuca frita – Deliciosas y crujientes yucas fritas, acompañadas de salsa de tomate y curtido.
-                            </p>
-
-                            <div class="btn-group mt-3">
-                                <button class="btn-nav" onclick="cambiarImagen(this, -1)">Anterior</button>
-                                <button class="btn-nav" onclick="cambiarImagen(this, 1)">Siguiente</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Platos fuertes -->
-                <div class="col-md-6">
-                    <div class="card card-platillo shadow-sm border-0" data-index="1">
-                        <h5 class="text-center card-title mt-3">Platos Fuertes</h5>
-
-                        <img src="https://mandolina.co/wp-content/uploads/2024/06/carne-asada-a-la-parrilla-1080x550-1-1200x900.jpg" alt="Carne asada" class="card-img-top platillo-img">
-
-                        <div class="card-body text-center">
-                            <p class="card-text platillo-desc">
-                                Carne asada – Deliciosa carne a la parrilla, servida con frijoles y ensalada.
-                            </p>
-
-                            <div class="btn-group mt-3">
-                                <button class="btn-nav" onclick="cambiarImagen(this, -1)">Anterior</button>
-                                <button class="btn-nav" onclick="cambiarImagen(this, 1)">Siguiente</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        
-            <div class="row justify-content-center g-4 mt-4">
-
-                <!-- Bebidas -->
-                <div class="col-md-6">
-                    <div class="card card-platillo shadow-sm border-0" data-index="2">
-                        <h5 class="text-center card-title mt-3">Bebidas</h5>
-
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1znaTgVqCEMw2DO0i_KYHXJFLLE4P3lpVw&s" alt="Bebidas" class="card-img-top platillo-img">
-
-                        <div class="card-body text-center">
-                            <p class="card-text platillo-desc">
-                                Refrescos tradicionales – Horchata, tamarindo o jamaica.
-                            </p>
-
-                            <div class="btn-group mt-3">
-                                <button class="btn-nav" onclick="cambiarImagen(this, -1)">Anterior</button>
-                                <button class="btn-nav" onclick="cambiarImagen(this, 1)">Siguiente</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Postres -->
-                <div class="col-md-6">
-                    <div class="card card-platillo shadow-sm border-0" data-index="3">
-                        <h5 class="text-center card-title mt-3">Postres</h5>
-
-                        <img src="https://mojo.generalmills.com/api/public/content/d0OzlvMawUWJ6G_dDAdWQg_gmi_hi_res_jpeg.jpeg?v=271f2d6e&t=16e3ce250f244648bef28c5949fb99ff" alt="Flan" class="card-img-top platillo-img">
-
-                        <div class="card-body text-center">
-                            <p class="card-text platillo-desc">
-                                Flan – Delicioso flan de vainilla, suave y cremoso.
-                            </p>
-
-                            <div class="btn-group mt-3">
-                                <button class="btn-nav" onclick="cambiarImagen(this, -1)">Anterior</button>
-                                <button class="btn-nav" onclick="cambiarImagen(this, 1)">Siguiente</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
-      
-        <aside class="col-lg-2 col-md-3 mb-4 text-center">
-            <h5 class="fw-bold mb-3">Nuestros Servicios</h5>
-
-            <div class="mb-4">
-                <i class="bi bi-truck display-5 text-warning"></i>
-                <p class="mt-2 fw-semibold">Delivery Rápido</p>
-            </div>
-
-            <div class="mb-4">
-                <i class="bi bi-people-fill display-5 text-warning"></i>
-                <p class="mt-2 fw-semibold">Catering para Eventos</p>
-            </div>
-
-            <a href="Reservas.html" class="btn-custom mb-2">Reservar Mesa</a>
-        </aside>
-
-    </div>
-
-</main>
-
-<footer id="footer" class="main-footer">
-    <div class="footer-container">
-        <p><a href="https://wa.me/50369739021"><i class="bi bi-whatsapp"></i> +503 6973-9021</a></p>
-        <p><a href="tel:+50322223333"><i class="bi bi-telephone"></i> +503 2222-3333</a></p>
-        <p><a href="mailto:contacto@salvadoreanbites.com"><i class="bi bi-envelope"></i> contacto@salvadoreanbites.com</a></p>
-        <p><a href="https://maps.app.goo.gl/uDmknGGWLnzTpY1L8" target="_blank"><i class="bi bi-geo-alt"></i> Unicentro Soyapango, San Salvador</a></p>
-
-        <div class="social-links">
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-tiktok"></i></a>
-        </div>
-
-        <small>© 2025 Salvadorean Bites. Todos los derechos reservados.</small>
-    </div>
-</footer>
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"> 
 
 
+    <link rel="stylesheet" href="css/main.css"> 
+    <link rel="stylesheet" href="css/galeria.css"> 
+</head> 
 
-<script>
-    
-</script>
+<body> 
 
-</body>
+<header> 
+    <nav aria-label="Navegación principal" class="main-nav"> 
+        <img src="img/Logo-lineal.png" alt="Logo de Salvadorean Bites" class="logo"> 
+
+        <div class="nav-links"> 
+            <a href="index.html">Inicio</a> 
+            <a href="galeria.html">Galería</a> 
+            <a href="nosotros.html">Nosotros</a> 
+            <a href="promos.html">Promociones</a> 
+            <a href="contacto.html">Contáctanos</a> 
+        </div> 
+
+        <a href="menu.html" class="menu-button">Menú</a> 
+    </nav> 
+</header> 
+
+<main class="container my-5"> 
+    <h1 class="text-center mb-4">Nuestros Platillos</h1> 
+    <p class="text-center text-muted mb-5"> 
+        Descubre la variedad de sabores salvadoreños en cada plato. 
+    </p> 
+
+    <div class="row justify-content-between align-items-start"> 
+
+        <!-- ======= Especiales del Día ======= --> 
+        <aside class="col-lg-2 col-md-3 mb-4 text-center"> 
+            <h5 class="fw-bold mb-3">Especiales del Día</h5> 
+
+            <img src="https://cdn7.kiwilimon.com/recetaimagen/2806/400x400/25790.jpg.webp" 
+                 class="img-fluid rounded mb-3 shadow-sm" alt="pupusas"> 
+
+            <img src="https://buenprovecho.hn/wp-content/uploads/2023/10/Sopa-de-olla.png" 
+                 class="img-fluid rounded mb-3 shadow-sm" alt="sopa del dia"> 
+
+            <div class="d-grid gap-2"> 
+                <a href="promos.html" class="btn-custom">Ver Ofertas</a> 
+                <a href="contacto.html" class="btn-custom">Ordenar Ahora</a> 
+            </div> 
+        </aside> 
+
+        <!-- ======= Categorias ======= --> 
+        <section class="col-lg-7 col-md-6"> 
+
+            <div class="row justify-content-center g-4"> 
+
+                <!-- Entrada --> 
+                <div class="col-md-6"> 
+                    <div class="card card-platillo shadow-sm border-0" data-index="0"> 
+                        <h5 class="text-center card-title mt-3">Entradas</h5> 
+                        <img src="https://i.ytimg.com/vi/dp6oQ7cekPc/maxresdefault.jpg" 
+                             alt="Yuca frita" class="card-img-top platillo-img"> 
+                        <div class="card-body text-center"> 
+                            <p class="card-text platillo-desc"> 
+                                Yuca frita – Deliciosas y crujientes yucas fritas, acompañadas de salsa de tomate y curtido. 
+                            </p> 
+                            <div class="btn-group mt-3"> 
+                                <button class="btn-nav" onclick="cambiarImagen(this, -1)">Anterior</button> 
+                                <button class="btn-nav" onclick="cambiarImagen(this, 1)">Siguiente</button> 
+                            </div> 
+                        </div> 
+                    </div> 
+                </div> 
+
+                <!-- Platos fuertes --> 
+                <div class="col-md-6"> 
+                    <div class="card card-platillo shadow-sm border-0" data-index="1"> 
+                        <h5 class="text-center card-title mt-3">Platos Fuertes</h5> 
+                        <img src="https://mandolina.co/wp-content/uploads/2024/06/carne-asada-a-la-parrilla-1080x550-1-1200x900.jpg" 
+                             alt="Carne asada" class="card-img-top platillo-img"> 
+                        <div class="card-body text-center"> 
+                            <p class="card-text platillo-desc"> 
+                                Carne asada – Deliciosa carne a la parrilla, servida con frijoles y ensalada. 
+                            </p> 
+                            <div class="btn-group mt-3"> 
+                                <button class="btn-nav" onclick="cambiarImagen(this, -1)">Anterior</button> 
+                                <button class="btn-nav" onclick="cambiarImagen(this, 1)">Siguiente</button> 
+                            </div> 
+                        </div> 
+                    </div> 
+                </div> 
+
+            </div> 
+
+           
+            <div class="row justify-content-center g-4 mt-4"> 
+
+                <!-- Bebidas --> 
+                <div class="col-md-6"> 
+                    <div class="card card-platillo shadow-sm border-0" data-index="2"> 
+                        <h5 class="text-center card-title mt-3">Bebidas</h5> 
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1znaTgVqCEMw2DO0i_KYHXJFLLE4P3lpVw&s" 
+                             alt="Bebidas" class="card-img-top platillo-img"> 
+                        <div class="card-body text-center"> 
+                            <p class="card-text platillo-desc"> 
+                                Refrescos tradicionales – Horchata, tamarindo o jamaica. 
+                            </p> 
+                            <div class="btn-group mt-3"> 
+                                <button class="btn-nav" onclick="cambiarImagen(this, -1)">Anterior</button> 
+                                <button class="btn-nav" onclick="cambiarImagen(this, 1)">Siguiente</button> 
+                            </div> 
+                        </div> 
+                    </div> 
+                </div> 
+
+                <!-- Postres --> 
+                <div class="col-md-6"> 
+                    <div class="card card-platillo shadow-sm border-0" data-index="3"> 
+                        <h5 class="text-center card-title mt-3">Postres</h5> 
+                        <img src="https://mojo.generalmills.com/api/public/content/d0OzlvMawUWJ6G_dDAdWQg_gmi_hi_res_jpeg.jpeg?v=271f2d6e&t=16e3ce250f244648bef28c5949fb99ff" 
+                             alt="Flan" class="card-img-top platillo-img"> 
+                        <div class="card-body text-center"> 
+                            <p class="card-text platillo-desc"> 
+                                Flan – Delicioso flan de vainilla, suave y cremoso. 
+                            </p> 
+                            <div class="btn-group mt-3"> 
+                                <button class="btn-nav" onclick="cambiarImagen(this, -1)">Anterior</button> 
+                                <button class="btn-nav" onclick="cambiarImagen(this, 1)">Siguiente</button> 
+                            </div> 
+                        </div> 
+                    </div> 
+                </div> 
+
+            </div> 
+
+        </section> 
+
+        <!-- ======= Servicios ======= --> 
+        <aside class="col-lg-2 col-md-3 mb-4 text-center"> 
+            <h5 class="fw-bold mb-3">Nuestros Servicios</h5> 
+
+            <div class="mb-4"> 
+                <i class="bi bi-truck display-5 text-warning"></i> 
+                <p class="mt-2 fw-semibold">Delivery Rápido</p> 
+            </div> 
+
+            <div class="mb-4"> 
+                <i class="bi bi-people-fill display-5 text-warning"></i> 
+                <p class="mt-2 fw-semibold">Catering para Eventos</p> 
+            </div> 
+
+            <a href="Reservas.html" class="btn-custom mb-2">Reservar Mesa</a> 
+        </aside> 
+
+    </div> 
+</main> 
+
+<footer id="footer" class="main-footer"> 
+    <div class="container footer"> 
+        <p><a href="https://wa.me/50369739021"><i class="bi bi-whatsapp"></i> +503 6973-9021</a></p> 
+        <p><a href="tel:+50322223333"><i class="bi bi-telephone"></i> +503 2222-3333</a></p> 
+        <p><a href="mailto:contacto@salvadoreanbites.com"><i class="bi bi-envelope"></i> contacto@salvadoreanbites.com</a></p> 
+        <p><a href="https://maps.app.goo.gl/uDmknGGWLnzTpY1L8" target="_blank"><i class="bi bi-geo-alt"></i> Unicentro Soyapango, San Salvador</a></p> 
+
+        <div class="social-links"> 
+            <a href="#" target="_blank"><i class="bi bi-instagram"></i></a> 
+            <a href="#" target="_blank"><i class="bi bi-facebook"></i></a> 
+            <a href="#" target="_blank"><i class="bi bi-tiktok"></i></a> 
+        </div> 
+
+        <small>© 2025 Salvadorean Bites. Todos los derechos reservados.</small> 
+    </div> 
+</footer> 
+
+<script> 
+
+</script> 
+
+</body> 
 </html>
-
-
